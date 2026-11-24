@@ -1,0 +1,11 @@
+{
+  "name": "BATTERY CHARGER PROJECT",
+  "short_name": "Battery Project",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07101d",
+  "theme_color": "#08111f",
+  "description": "Professional battery monitor",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

@@ -2,107 +2,68 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1220">
-<meta name="description" content="Battery Charger Project - pemantau baterai profesional untuk Android.">
-<title>BATTERY CHARGER PROJECT</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08111f">
+<meta name="description" content="BATTERY CHARGER PROJECT 2.0 - monitor baterai dengan dashboard profesional, animasi dan dukungan instalasi PWA.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>BATTERY CHARGER PROJECT 2.0</title>
 <style>
-:root{color-scheme:dark;--bg:#080e19;--panel:#111c2d;--panel2:#152238;--line:#253650;--text:#eef5ff;--muted:#8fa3bf;--blue:#42a5ff;--cyan:#49d7e8;--green:#43d69a;--amber:#ffbf5b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#1d3b60 0,transparent 48%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-.wrap{max-width:760px;margin:auto;padding:22px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#2389ed,#42d6d4);display:grid;place-items:center;box-shadow:0 8px 25px #168be544}.logo svg{width:25px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan);font-weight:800}.brand h1{font-size:15px;letter-spacing:.5px;margin:3px 0 0}.live{border:1px solid #285a4b;color:#68e5b0;background:#102c27;padding:7px 10px;border-radius:30px;font-size:11px;font-weight:700}
-.card{background:linear-gradient(145deg,#142238,#0e1929);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 14px 35px #0003;margin-bottom:14px}.hero{text-align:center;padding:24px 18px 22px}.section-label{color:var(--muted);font-size:11px;letter-spacing:1.6px;font-weight:800}.ring{width:220px;height:220px;margin:18px auto 15px;position:relative;display:grid;place-items:center}.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}.track{fill:none;stroke:#26374e;stroke-width:11}.progress{fill:none;stroke:url(#grad);stroke-width:11;stroke-linecap:round;stroke-dasharray:565.5;stroke-dashoffset:565.5;transition:stroke-dashoffset .6s ease}.percent{font-size:49px;font-weight:800;letter-spacing:-2px}.percent small{font-size:20px;color:var(--muted);letter-spacing:0}.status{color:var(--green);font-weight:700;font-size:14px}.substatus{color:var(--muted);font-size:12px;margin-top:5px}.bar{height:8px;background:#26374e;border-radius:20px;overflow:hidden;margin:20px 0 8px}.bar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:20px;transition:width .5s}.bar-caption{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{padding:16px;min-height:112px}.metric-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.metric-icon{width:31px;height:31px;border-radius:10px;background:#203550;display:grid;place-items:center;color:var(--cyan);font-size:16px}.metric-value{font-size:23px;font-weight:750;margin-top:12px}.metric-note{font-size:11px;color:var(--muted);margin-top:3px}.wide{grid-column:1/-1}.heading{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.heading h2{font-size:14px;margin:0}.heading span{font-size:11px;color:var(--muted)}.health-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #253650;font-size:13px}.health-row:last-child{border:0}.health-row span:last-child{color:#dce9fb;font-weight:650;text-align:right}.notice{font-size:11px;line-height:1.55;color:var(--muted);padding:13px 15px}.notice strong{color:#dce9fb}.btn{width:100%;border:1px solid #2c5278;background:#142b45;color:#dff1ff;padding:13px;border-radius:13px;font-weight:700;margin-top:13px;font-size:13px}.footer{text-align:center;color:#657994;font-size:10px;padding:18px 0 4px}.pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#1c3048;color:#a9c9ed;font-size:10px}
-@media(min-width:600px){.wrap{padding-top:32px}.hero{padding:30px}.ring{width:240px;height:240px}}
+:root{color-scheme:dark;--bg:#07101d;--panel:#101e31;--panel2:#14253c;--line:#263d59;--text:#edf6ff;--muted:#8fa7c4;--blue:#4aa8ff;--cyan:#4ce0ed;--green:#42dfa3;--amber:#ffc15e;--red:#ff6d78}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -12%,#1e4770 0,transparent 43%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:780px;margin:auto;padding:18px 15px 38px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}.brand{display:flex;align-items:center;gap:10px}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#2389ed,#42d6d4);display:grid;place-items:center;box-shadow:0 8px 24px #168be544}.logo svg{width:26px}.eyebrow{font-size:9px;letter-spacing:1.8px;color:var(--cyan);font-weight:900}.brand h1{font-size:14px;letter-spacing:.3px;margin:3px 0 0}.live{border:1px solid #285a4b;color:#68e5b0;background:#102c27;padding:7px 9px;border-radius:30px;font-size:10px;font-weight:800;white-space:nowrap}
+.card{background:linear-gradient(145deg,#14263e,#0d192a);border:1px solid var(--line);border-radius:21px;padding:17px;box-shadow:0 14px 35px #0004;margin-bottom:12px}.hero{text-align:center;padding:20px 15px}.label{color:var(--muted);font-size:10px;letter-spacing:1.6px;font-weight:850}.stage{height:232px;display:grid;place-items:center;position:relative;perspective:700px}.battery3d{width:126px;height:190px;border:5px solid #91abc7;border-radius:23px;padding:8px;position:relative;transform:rotateX(7deg) rotateY(-12deg);background:linear-gradient(120deg,#243b58,#0a1525 55%,#1c3550);box-shadow:inset 8px 0 15px #ffffff12,inset -8px 0 18px #0008,0 24px 38px #0008;transition:.4s}.battery3d:before{content:"";position:absolute;width:43px;height:10px;background:#91abc7;border-radius:6px 6px 2px 2px;top:-14px;left:calc(50% - 21px)}.battery-fill{position:absolute;bottom:8px;left:8px;right:8px;height:0%;border-radius:11px;background:linear-gradient(0deg,#1489e8,#43e3bb);box-shadow:0 0 22px #31c9e888;transition:height .7s;overflow:hidden}.battery-fill:after{content:"";position:absolute;inset:-30% -50%;background:linear-gradient(110deg,transparent 35%,#ffffff55 50%,transparent 65%);animation:shine 2.6s linear infinite}.charging .battery-fill:before{content:"";position:absolute;left:0;right:0;top:-15px;height:30px;background:#b8fff2aa;filter:blur(13px);animation:wave 1.5s ease-in-out infinite}.bolt{position:absolute;inset:0;display:grid;place-items:center;font-size:42px;color:white;text-shadow:0 0 16px #4ce0ed;opacity:0;transition:.3s}.charging .bolt{opacity:1;animation:pulse 1.4s infinite}.charging .battery3d{box-shadow:inset 8px 0 15px #ffffff12,inset -8px 0 18px #0008,0 0 30px #39d6e766,0 24px 38px #0008}
+@keyframes shine{to{transform:translateX(100%)}}@keyframes wave{50%{opacity:.35;transform:translateY(9px)}}@keyframes pulse{50%{transform:scale(1.13);opacity:.65}}
+.percent{font-size:43px;font-weight:850;letter-spacing:-2px;margin-top:2px}.percent small{font-size:18px;color:var(--muted)}.status{color:var(--green);font-size:13px;font-weight:750}.sub{color:var(--muted);font-size:11px;margin-top:4px}.clock{font-size:20px;font-weight:750;letter-spacing:1px;margin-top:12px}.date{font-size:10px;color:var(--muted);text-transform:capitalize}
+.bar{height:7px;background:#263b55;border-radius:20px;overflow:hidden;margin:16px 0 7px}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:20px;transition:width .5s}.barcap{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}
+.heading{display:flex;justify-content:space-between;align-items:center;margin:19px 2px 10px}.heading h2{font-size:13px;margin:0}.heading span{font-size:10px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric{padding:14px;min-height:105px;margin:0}.metric-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px;font-weight:750}.ico{width:29px;height:29px;border-radius:9px;background:#203b5a;display:grid;place-items:center;color:var(--cyan);font-size:15px}.value{font-size:21px;font-weight:800;margin-top:10px}.note{font-size:10px;color:var(--muted);margin-top:3px}.rows .row{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #263b55;font-size:12px}.rows .row:last-child{border:0}.rows .row span:last-child{text-align:right;font-weight:700}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.btn{border:1px solid #315b83;background:#17314e;color:#e7f5ff;padding:12px 9px;border-radius:12px;font-weight:750;font-size:11px}.btn.primary{background:linear-gradient(110deg,#1876c9,#159b9d);border:0}.btn:active{transform:scale(.98)}.notice{font-size:10px;line-height:1.6;color:var(--muted)}.notice b{color:#e1efff}.footer{text-align:center;color:#647c99;font-size:9px;padding:15px 0}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#203954;border:1px solid #456786;border-radius:12px;padding:11px 15px;font-size:12px;box-shadow:0 8px 25px #0008;display:none;z-index:5;max-width:90%;text-align:center}
+@media(min-width:600px){.wrap{padding-top:27px}.stage{height:245px}.battery3d{width:138px;height:200px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top">
- <div class="brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="7" width="17" height="11" rx="2"/><path d="M22 10v5M10 9l-2 4h4l-2 4"/></svg></div><div><div class="eyebrow">PROFESSIONAL MONITOR</div><h1>BATTERY CHARGER PROJECT</h1></div></div>
- <div class="live">● LIVE</div>
-</header>
-
+<header class="top"><div class="brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="7" width="17" height="11" rx="2"/><path d="M22 10v5M10 9l-2 4h4l-2 4"/></svg></div><div><div class="eyebrow">PROFESSIONAL BATTERY MONITOR</div><h1>BATTERY CHARGER PROJECT</h1></div></div><div class="live">● VERSION 2.0</div></header>
 <section class="card hero">
- <div class="section-label">TINGKAT BATERAI SAAT INI</div>
- <div class="ring">
-  <svg viewBox="0 0 200 200" aria-hidden="true"><defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#42a5ff"/><stop offset="1" stop-color="#43d69a"/></linearGradient></defs><circle class="track" cx="100" cy="100" r="90"/><circle class="progress" id="progress" cx="100" cy="100" r="90"/></svg>
-  <div><div class="percent"><span id="level">--</span><small>%</small></div><div class="substatus" id="levelText">Menunggu data baterai</div></div>
- </div>
- <div class="status" id="chargeStatus">Memeriksa status...</div>
- <div class="substatus" id="chargeDetail">Izinkan browser membaca informasi baterai jika diminta.</div>
- <div class="bar"><span id="barFill"></span></div>
- <div class="bar-caption"><span>0%</span><span id="barLabel">--% terisi</span><span>100%</span></div>
+ <div class="label">LIVE BATTERY DISPLAY</div>
+ <div class="stage" id="stage"><div class="battery3d"><div class="battery-fill" id="fill"></div><div class="bolt">ϟ</div></div></div>
+ <div class="percent"><span id="level">--</span><small>%</small></div><div class="status" id="status">Menunggu data baterai</div><div class="sub" id="detail">Memeriksa dukungan browser...</div>
+ <div class="clock" id="clock">--:--:--</div><div class="date" id="date">Memuat tanggal</div>
+ <div class="bar"><span id="bar"></span></div><div class="barcap"><span>0%</span><span id="bartext">--% terisi</span><span>100%</span></div>
 </section>
-
-<div class="heading"><h2>INFORMASI PERANGKAT</h2><span class="pill">REAL-TIME</span></div>
+<div class="heading"><h2>INFORMASI PERANGKAT</h2><span>PEMANTAUAN LANGSUNG</span></div>
 <section class="grid">
- <div class="card metric"><div class="metric-head"><span>SUHU BATERAI</span><div class="metric-icon">🌡</div></div><div class="metric-value" id="temp">--</div><div class="metric-note">Tidak tersedia di browser standar</div></div>
- <div class="card metric"><div class="metric-head"><span>TEGANGAN</span><div class="metric-icon">ϟ</div></div><div class="metric-value" id="voltage">--</div><div class="metric-note">Memerlukan akses perangkat khusus</div></div>
- <div class="card metric"><div class="metric-head"><span>WAKTU PENUH</span><div class="metric-icon">◷</div></div><div class="metric-value" id="fullTime">--</div><div class="metric-note">Perkiraan dari browser</div></div>
- <div class="card metric"><div class="metric-head"><span>WAKTU HABIS</span><div class="metric-icon">⌁</div></div><div class="metric-value" id="emptyTime">--</div><div class="metric-note">Perkiraan dari browser</div></div>
+ <div class="card metric"><div class="metric-head">SUHU BATERAI <div class="ico">🌡</div></div><div class="value">--</div><div class="note">Tidak disediakan browser</div></div>
+ <div class="card metric"><div class="metric-head">TEGANGAN <div class="ico">ϟ</div></div><div class="value">--</div><div class="note">Memerlukan API perangkat</div></div>
+ <div class="card metric"><div class="metric-head">ESTIMASI PENUH <div class="ico">◷</div></div><div class="value" id="full">--</div><div class="note">Jika tersedia dari browser</div></div>
+ <div class="card metric"><div class="metric-head">ESTIMASI HABIS <div class="ico">⌁</div></div><div class="value" id="empty">--</div><div class="note">Jika tersedia dari browser</div></div>
 </section>
-
-<div class="heading"><h2>STATUS BATERAI</h2><span>DETAIL</span></div>
-<section class="card">
- <div class="health-row"><span>Status pengisian</span><span id="charging">--</span></div>
- <div class="health-row"><span>Kondisi koneksi charger</span><span id="plug">--</span></div>
- <div class="health-row"><span>Estimasi kapasitas penuh</span><span id="capacity">Tidak tersedia</span></div>
- <div class="health-row"><span>Kesehatan baterai</span><span id="health">Tidak tersedia</span></div>
- <button class="btn" id="refresh">↻ PERBARUI INFORMASI</button>
+<div class="heading"><h2>STATUS BATERAI</h2><span>DETAIL SISTEM</span></div>
+<section class="card rows">
+ <div class="row"><span>Status pengisian</span><span id="charging">--</span></div>
+ <div class="row"><span>Kondisi charger</span><span id="plug">--</span></div>
+ <div class="row"><span>Kapasitas & kesehatan</span><span>Tidak tersedia</span></div>
+ <div class="row"><span>Notifikasi</span><span id="notifState">Belum diaktifkan</span></div>
+ <div class="actions"><button class="btn primary" id="sound">♫ AKTIFKAN SUARA</button><button class="btn" id="notify">♧ IZINKAN NOTIFIKASI</button><button class="btn" id="install" hidden>＋ PASANG APLIKASI</button><button class="btn" id="refresh">↻ PERBARUI DATA</button></div>
 </section>
-<section class="card notice"><strong>Catatan kompatibilitas:</strong> Website ini menggunakan Battery Status API. Dukungan berbeda-beda menurut browser dan perangkat Android. Suhu, tegangan, kapasitas mAh, serta kesehatan baterai biasanya tidak diberikan oleh browser; bagian tersebut akan tetap bertanda “Tidak tersedia” dan tidak dibuat-buat.</section>
-<div class="footer">BATTERY CHARGER PROJECT · VERSION 1.0<br>Made for Android · Free GitHub Pages</div>
-</div>
+<section class="card notice"><b>Informasi penting:</b> Data langsung memakai Battery Status API jika browser mendukungnya. Suhu, voltase, kapasitas mAh dan kesehatan baterai tidak disediakan API browser standar. Estimasi waktu juga bergantung pada dukungan perangkat. Suara dan notifikasi memerlukan izin pengguna; notifikasi saat halaman ditutup tidak dijamin. Website tidak mempercepat pengisian daya secara fisik.</section>
+<div class="footer">BATTERY CHARGER PROJECT · VERSION 2.0<br>Free GitHub Pages · Installable PWA</div>
+</div><div class="toast" id="toast"></div>
 <script>
 (() => {
- const $ = id => document.getElementById(id);
- let battery = null;
- const fmt = seconds => {
-   if (!Number.isFinite(seconds) || seconds < 0) return '--';
-   if (seconds === Infinity) return '—';
-   const h = Math.floor(seconds / 3600), m = Math.floor((seconds % 3600) / 60);
-   return h ? `${h}j ${m}m` : `${m}m`;
- };
- function render() {
-   if (!battery) return;
-   const pct = Math.round(battery.level * 100);
-   $('level').textContent = pct;
-   $('levelText').textContent = pct <= 20 ? 'Daya baterai rendah' : pct >= 95 ? 'Baterai hampir penuh' : 'Kapasitas baterai';
-   $('progress').style.strokeDashoffset = 565.5 * (1 - battery.level);
-   $('barFill').style.width = pct + '%';
-   $('barLabel').textContent = pct + '% terisi';
-   const charging = battery.charging;
-   $('chargeStatus').textContent = charging ? '⚡ Sedang mengisi daya' : '● Tidak sedang mengisi';
-   $('chargeStatus').style.color = charging ? '#49d7e8' : '#ffbf5b';
-   $('chargeDetail').textContent = charging ? 'Charger terdeteksi oleh sistem browser.' : 'Sambungkan charger untuk mulai mengisi daya.';
-   $('charging').textContent = charging ? 'Mengisi daya' : 'Tidak mengisi';
-   $('plug').textContent = charging ? 'Terhubung / terdeteksi' : 'Tidak terdeteksi';
-   $('fullTime').textContent = charging ? fmt(battery.chargingTime) : '--';
-   $('emptyTime').textContent = !charging ? fmt(battery.dischargingTime) : '--';
-   $('capacity').textContent = 'Tidak tersedia melalui browser';
-   $('health').textContent = 'Tidak tersedia melalui browser';
- }
- async function init() {
-   if (!('getBattery' in navigator)) {
-     $('chargeStatus').textContent = 'Battery API tidak didukung';
-     $('chargeDetail').textContent = 'Coba browser yang mendukung fitur ini. Tampilan tetap dapat dibuka, tetapi data langsung tidak tersedia.';
-     $('level').textContent = '--';
-     $('charging').textContent = 'Tidak didukung';
-     $('plug').textContent = 'Tidak diketahui';
-     return;
-   }
-   try {
-     battery = await navigator.getBattery();
-     ['levelchange','chargingchange','chargingtimechange','dischargingtimechange'].forEach(ev => battery.addEventListener(ev, render));
-     render();
-   } catch (e) {
-     $('chargeStatus').textContent = 'Akses baterai tidak tersedia';
-     $('chargeDetail').textContent = 'Browser atau perangkat membatasi akses informasi baterai.';
-   }
- }
- $('refresh').addEventListener('click', () => battery ? render() : init());
+ const $=id=>document.getElementById(id); let battery=null, audio=null, lastCharging=null, deferredPrompt=null, soundOn=false;
+ const toast=msg=>{const t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',2600)};
+ const fmt=s=>{if(!Number.isFinite(s)||s<0)return '--';if(s===Infinity)return '—';const h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h?`${h}j ${m}m`:`${m}m`};
+ function beep(){if(!soundOn)return;try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=880;g.gain.setValueAtTime(.0001,audio.currentTime);g.gain.exponentialRampToValueAtTime(.12,audio.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.28);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.3)}catch(e){}}
+ function notify(title,body){if('Notification'in window&&Notification.permission==='granted'){try{new Notification(title,{body,icon:'icon.svg'})}catch(e){}}}
+ function render(){if(!battery)return;const p=Math.round(battery.level*100),charging=battery.charging;$('level').textContent=p;$('fill').style.height=p+'%';$('bar').style.width=p+'%';$('bartext').textContent=p+'% terisi';$('stage').classList.toggle('charging',charging);$('status').textContent=charging?'⚡ Sedang mengisi daya':(p<=20?'Baterai lemah':'Tidak sedang mengisi');$('status').style.color=p<=20&&!charging?'#ffbf5e':'#42dfa3';$('detail').textContent=charging?'Charger terdeteksi oleh browser': 'Sambungkan charger untuk mulai mengisi';$('charging').textContent=charging?'Mengisi daya':'Tidak mengisi';$('plug').textContent=charging?'Terdeteksi':'Tidak terdeteksi';$('full').textContent=charging?fmt(battery.chargingTime):'--';$('empty').textContent=!charging?fmt(battery.dischargingTime):'--';if(lastCharging!==null&&lastCharging!==charging){beep();notify(charging?'Charger terhubung':'Charger dilepas',charging?'Pengisian daya terdeteksi.':'Pengisian daya berhenti.')}lastCharging=charging;if(p>=100&&charging){notify('Baterai penuh','Baterai mencapai 100%.');}}
+ async function init(){if(!('getBattery'in navigator)){$('status').textContent='Battery API tidak didukung';$('detail').textContent='Browser ini tidak memberikan data baterai. Coba browser lain.';$('charging').textContent='Tidak didukung';$('plug').textContent='Tidak diketahui';return}try{battery=await navigator.getBattery();['levelchange','chargingchange','chargingtimechange','dischargingtimechange'].forEach(e=>battery.addEventListener(e,render));render()}catch(e){$('status').textContent='Data baterai tidak dapat diakses';$('detail').textContent='Akses dibatasi browser atau perangkat.'}}
+ function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('id-ID',{hour12:false});$('date').textContent=d.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}tick();setInterval(tick,1000);
+ $('sound').onclick=async()=>{try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();await audio.resume();soundOn=!soundOn;$('sound').textContent=soundOn?'♫ SUARA AKTIF':'♫ AKTIFKAN SUARA';toast(soundOn?'Suara notifikasi aktif':'Suara dimatikan');if(soundOn)beep()}catch(e){toast('Audio tidak didukung browser')}}
+ $('notify').onclick=async()=>{if(!('Notification'in window)){toast('Notifikasi tidak didukung browser');return}const p=await Notification.requestPermission();$('notifState').textContent=p==='granted'?'Diizinkan':p==='denied'?'Ditolak':'Belum diizinkan';toast(p==='granted'?'Izin notifikasi aktif':'Izin notifikasi tidak diberikan')}
+ $('refresh').onclick=()=>{if(battery){render();toast('Data diperbarui')}else init()};
+ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('install').hidden=false});$('install').onclick=async()=>{if(!deferredPrompt){toast('Gunakan menu browser > Tambahkan ke layar utama');return}deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$('install').hidden=true};
+ if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
  init();
 })();
 </script>
-</body>
-</html>
+</body></html>
