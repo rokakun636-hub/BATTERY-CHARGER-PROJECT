@@ -1,16 +1,22 @@
-# BATTERY CHARGER PROJECT 4.0 — ULTIMATE EDITION
+# BATTERY CHARGER PROJECT 5.0 – EXTREME EDITION
 
-## Upload via GitHub Android
-1. Extract this ZIP on your Android phone.
-2. Open your existing `BATTERY-CHARGER-PROJECT` repository.
-3. Choose **Add file → Upload files**.
-4. Upload and replace these files in the repository root: `index.html`, `manifest.json`, `sw.js`, `icon.svg`.
-5. Commit changes to `main`.
-6. GitHub Pages should remain configured for `main` and `/(root)`.
-7. Wait for deployment, then reopen the Pages website. If old content remains, close the tab and reopen it.
+## Isi proyek
+- `index.html` – aplikasi utama
+- `manifest.json` – konfigurasi PWA
+- `sw.js` – cache/offline dasar
+- `icon.svg` – ikon aplikasi
 
-## Features
-3D-style animated battery, charging screen, clock/date, themes, background patterns, sound effects, low-battery alert, notification permission, optional Screen Wake Lock, battery chart and local history.
+## Deploy gratis di GitHub Pages
+Upload semua file ke root repository, lalu commit ke branch `main`. Pastikan Settings > Pages menggunakan Deploy from a branch, `main`, dan `/(root)`.
 
-## Limitations
-The Battery Status API is not supported in every browser. Battery temperature, voltage, mAh capacity and battery health are not exposed by standard web APIs. Screen Wake Lock only keeps the screen awake while the page is active and supported; it is not true Always-On Display. Web alarms are not guaranteed when the page is closed or the phone is locked. The website does not physically speed up charging.
+## Fitur
+- Pembacaan persentase dan status charging jika browser mendukung Battery Status API
+- Charging screen dan jam digital
+- Grafik riwayat level baterai lokal
+- Tema warna dan wallpaper lokal
+- Alarm saat ambang baterai lemah/penuh tercapai ketika halaman berjalan
+- Efek suara sederhana
+- PWA dan cache offline dasar
+
+## Batasan browser
+Battery Status API tidak didukung oleh semua browser Android. Suhu, tegangan, arus, kesehatan baterai, dan alarm andal ketika aplikasi tertutup tidak dijamin. Website tidak dapat mempercepat pengisian daya atau mengubah pengaturan hardware baterai. Riwayat disimpan lokal pada browser/perangkat ini.
