@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="Battery Charger Project - pemantau baterai profesional untuk Android.">
+<title>BATTERY CHARGER PROJECT</title>
+<style>
+:root{color-scheme:dark;--bg:#080e19;--panel:#111c2d;--panel2:#152238;--line:#253650;--text:#eef5ff;--muted:#8fa3bf;--blue:#42a5ff;--cyan:#49d7e8;--green:#43d69a;--amber:#ffbf5b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#1d3b60 0,transparent 48%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:22px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#2389ed,#42d6d4);display:grid;place-items:center;box-shadow:0 8px 25px #168be544}.logo svg{width:25px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan);font-weight:800}.brand h1{font-size:15px;letter-spacing:.5px;margin:3px 0 0}.live{border:1px solid #285a4b;color:#68e5b0;background:#102c27;padding:7px 10px;border-radius:30px;font-size:11px;font-weight:700}
+.card{background:linear-gradient(145deg,#142238,#0e1929);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 14px 35px #0003;margin-bottom:14px}.hero{text-align:center;padding:24px 18px 22px}.section-label{color:var(--muted);font-size:11px;letter-spacing:1.6px;font-weight:800}.ring{width:220px;height:220px;margin:18px auto 15px;position:relative;display:grid;place-items:center}.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}.track{fill:none;stroke:#26374e;stroke-width:11}.progress{fill:none;stroke:url(#grad);stroke-width:11;stroke-linecap:round;stroke-dasharray:565.5;stroke-dashoffset:565.5;transition:stroke-dashoffset .6s ease}.percent{font-size:49px;font-weight:800;letter-spacing:-2px}.percent small{font-size:20px;color:var(--muted);letter-spacing:0}.status{color:var(--green);font-weight:700;font-size:14px}.substatus{color:var(--muted);font-size:12px;margin-top:5px}.bar{height:8px;background:#26374e;border-radius:20px;overflow:hidden;margin:20px 0 8px}.bar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:20px;transition:width .5s}.bar-caption{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{padding:16px;min-height:112px}.metric-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.metric-icon{width:31px;height:31px;border-radius:10px;background:#203550;display:grid;place-items:center;color:var(--cyan);font-size:16px}.metric-value{font-size:23px;font-weight:750;margin-top:12px}.metric-note{font-size:11px;color:var(--muted);margin-top:3px}.wide{grid-column:1/-1}.heading{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}.heading h2{font-size:14px;margin:0}.heading span{font-size:11px;color:var(--muted)}.health-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #253650;font-size:13px}.health-row:last-child{border:0}.health-row span:last-child{color:#dce9fb;font-weight:650;text-align:right}.notice{font-size:11px;line-height:1.55;color:var(--muted);padding:13px 15px}.notice strong{color:#dce9fb}.btn{width:100%;border:1px solid #2c5278;background:#142b45;color:#dff1ff;padding:13px;border-radius:13px;font-weight:700;margin-top:13px;font-size:13px}.footer{text-align:center;color:#657994;font-size:10px;padding:18px 0 4px}.pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#1c3048;color:#a9c9ed;font-size:10px}
+@media(min-width:600px){.wrap{padding-top:32px}.hero{padding:30px}.ring{width:240px;height:240px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="7" width="17" height="11" rx="2"/><path d="M22 10v5M10 9l-2 4h4l-2 4"/></svg></div><div><div class="eyebrow">PROFESSIONAL MONITOR</div><h1>BATTERY CHARGER PROJECT</h1></div></div>
+ <div class="live">● LIVE</div>
+</header>
+
+<section class="card hero">
+ <div class="section-label">TINGKAT BATERAI SAAT INI</div>
+ <div class="ring">
+  <svg viewBox="0 0 200 200" aria-hidden="true"><defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#42a5ff"/><stop offset="1" stop-color="#43d69a"/></linearGradient></defs><circle class="track" cx="100" cy="100" r="90"/><circle class="progress" id="progress" cx="100" cy="100" r="90"/></svg>
+  <div><div class="percent"><span id="level">--</span><small>%</small></div><div class="substatus" id="levelText">Menunggu data baterai</div></div>
+ </div>
+ <div class="status" id="chargeStatus">Memeriksa status...</div>
+ <div class="substatus" id="chargeDetail">Izinkan browser membaca informasi baterai jika diminta.</div>
+ <div class="bar"><span id="barFill"></span></div>
+ <div class="bar-caption"><span>0%</span><span id="barLabel">--% terisi</span><span>100%</span></div>
+</section>
+
+<div class="heading"><h2>INFORMASI PERANGKAT</h2><span class="pill">REAL-TIME</span></div>
+<section class="grid">
+ <div class="card metric"><div class="metric-head"><span>SUHU BATERAI</span><div class="metric-icon">🌡</div></div><div class="metric-value" id="temp">--</div><div class="metric-note">Tidak tersedia di browser standar</div></div>
+ <div class="card metric"><div class="metric-head"><span>TEGANGAN</span><div class="metric-icon">ϟ</div></div><div class="metric-value" id="voltage">--</div><div class="metric-note">Memerlukan akses perangkat khusus</div></div>
+ <div class="card metric"><div class="metric-head"><span>WAKTU PENUH</span><div class="metric-icon">◷</div></div><div class="metric-value" id="fullTime">--</div><div class="metric-note">Perkiraan dari browser</div></div>
+ <div class="card metric"><div class="metric-head"><span>WAKTU HABIS</span><div class="metric-icon">⌁</div></div><div class="metric-value" id="emptyTime">--</div><div class="metric-note">Perkiraan dari browser</div></div>
+</section>
+
+<div class="heading"><h2>STATUS BATERAI</h2><span>DETAIL</span></div>
+<section class="card">
+ <div class="health-row"><span>Status pengisian</span><span id="charging">--</span></div>
+ <div class="health-row"><span>Kondisi koneksi charger</span><span id="plug">--</span></div>
+ <div class="health-row"><span>Estimasi kapasitas penuh</span><span id="capacity">Tidak tersedia</span></div>
+ <div class="health-row"><span>Kesehatan baterai</span><span id="health">Tidak tersedia</span></div>
+ <button class="btn" id="refresh">↻ PERBARUI INFORMASI</button>
+</section>
+<section class="card notice"><strong>Catatan kompatibilitas:</strong> Website ini menggunakan Battery Status API. Dukungan berbeda-beda menurut browser dan perangkat Android. Suhu, tegangan, kapasitas mAh, serta kesehatan baterai biasanya tidak diberikan oleh browser; bagian tersebut akan tetap bertanda “Tidak tersedia” dan tidak dibuat-buat.</section>
+<div class="footer">BATTERY CHARGER PROJECT · VERSION 1.0<br>Made for Android · Free GitHub Pages</div>
+</div>
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ let battery = null;
+ const fmt = seconds => {
+   if (!Number.isFinite(seconds) || seconds < 0) return '--';
+   if (seconds === Infinity) return '—';
+   const h = Math.floor(seconds / 3600), m = Math.floor((seconds % 3600) / 60);
+   return h ? `${h}j ${m}m` : `${m}m`;
+ };
+ function render() {
+   if (!battery) return;
+   const pct = Math.round(battery.level * 100);
+   $('level').textContent = pct;
+   $('levelText').textContent = pct <= 20 ? 'Daya baterai rendah' : pct >= 95 ? 'Baterai hampir penuh' : 'Kapasitas baterai';
+   $('progress').style.strokeDashoffset = 565.5 * (1 - battery.level);
+   $('barFill').style.width = pct + '%';
+   $('barLabel').textContent = pct + '% terisi';
+   const charging = battery.charging;
+   $('chargeStatus').textContent = charging ? '⚡ Sedang mengisi daya' : '● Tidak sedang mengisi';
+   $('chargeStatus').style.color = charging ? '#49d7e8' : '#ffbf5b';
+   $('chargeDetail').textContent = charging ? 'Charger terdeteksi oleh sistem browser.' : 'Sambungkan charger untuk mulai mengisi daya.';
+   $('charging').textContent = charging ? 'Mengisi daya' : 'Tidak mengisi';
+   $('plug').textContent = charging ? 'Terhubung / terdeteksi' : 'Tidak terdeteksi';
+   $('fullTime').textContent = charging ? fmt(battery.chargingTime) : '--';
+   $('emptyTime').textContent = !charging ? fmt(battery.dischargingTime) : '--';
+   $('capacity').textContent = 'Tidak tersedia melalui browser';
+   $('health').textContent = 'Tidak tersedia melalui browser';
+ }
+ async function init() {
+   if (!('getBattery' in navigator)) {
+     $('chargeStatus').textContent = 'Battery API tidak didukung';
+     $('chargeDetail').textContent = 'Coba browser yang mendukung fitur ini. Tampilan tetap dapat dibuka, tetapi data langsung tidak tersedia.';
+     $('level').textContent = '--';
+     $('charging').textContent = 'Tidak didukung';
+     $('plug').textContent = 'Tidak diketahui';
+     return;
+   }
+   try {
+     battery = await navigator.getBattery();
+     ['levelchange','chargingchange','chargingtimechange','dischargingtimechange'].forEach(ev => battery.addEventListener(ev, render));
+     render();
+   } catch (e) {
+     $('chargeStatus').textContent = 'Akses baterai tidak tersedia';
+     $('chargeDetail').textContent = 'Browser atau perangkat membatasi akses informasi baterai.';
+   }
+ }
+ $('refresh').addEventListener('click', () => battery ? render() : init());
+ init();
+})();
+</script>
+</body>
+</html>
