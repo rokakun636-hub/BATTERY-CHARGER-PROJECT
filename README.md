@@ -1,22 +1,19 @@
-# BATTERY CHARGER PROJECT 5.0 – EXTREME EDITION
+# BATTERY CHARGER PROJECT 6.0 – PROFESSIONAL EDITION
 
-## Isi proyek
+## Isi ZIP
 - `index.html` – aplikasi utama
 - `manifest.json` – konfigurasi PWA
-- `sw.js` – cache/offline dasar
+- `sw.js` – cache/offline service worker
 - `icon.svg` – ikon aplikasi
 
-## Deploy gratis di GitHub Pages
-Upload semua file ke root repository, lalu commit ke branch `main`. Pastikan Settings > Pages menggunakan Deploy from a branch, `main`, dan `/(root)`.
+## Upload ke GitHub Pages
+1. Buka repositori `BATTERY-CHARGER-PROJECT`.
+2. Pilih **Add file → Upload files**.
+3. Upload ke folder utama/root keempat file di atas.
+4. Jika diminta mengganti file yang sudah ada, pastikan nama dan lokasinya tepat.
+5. Tekan **Commit changes**.
+6. Tunggu GitHub Actions berstatus hijau.
+7. Buka website dalam tab Samaran untuk tes versi 6.0.
 
-## Fitur
-- Pembacaan persentase dan status charging jika browser mendukung Battery Status API
-- Charging screen dan jam digital
-- Grafik riwayat level baterai lokal
-- Tema warna dan wallpaper lokal
-- Alarm saat ambang baterai lemah/penuh tercapai ketika halaman berjalan
-- Efek suara sederhana
-- PWA dan cache offline dasar
-
-## Batasan browser
-Battery Status API tidak didukung oleh semua browser Android. Suhu, tegangan, arus, kesehatan baterai, dan alarm andal ketika aplikasi tertutup tidak dijamin. Website tidak dapat mempercepat pengisian daya atau mengubah pengaturan hardware baterai. Riwayat disimpan lokal pada browser/perangkat ini.
+## Catatan kemampuan
+Battery Status API tidak tersedia di semua browser. Suhu, tegangan, arus, kesehatan baterai, dan kontrol kecepatan pengisian tidak disediakan secara konsisten oleh browser web. Alarm/notifikasi memerlukan izin browser dan halaman yang berjalan; tidak dijamin aktif saat browser ditutup.
