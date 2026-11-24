@@ -1,21 +1,14 @@
-# BATTERY CHARGER PROJECT 2.0
+# BATTERY CHARGER PROJECT 3.0
 
-## Isi paket
-- `index.html` — dashboard profesional, animasi baterai 3D, jam digital, suara, permintaan izin notifikasi, dan pembacaan Battery Status API.
-- `manifest.json` — metadata instalasi PWA.
-- `sw.js` — cache offline dasar.
-- `icon.svg` — ikon aplikasi.
+Files: index.html (dashboard, alarm penuh/lemah, volume, tes suara, tema, fullscreen, grafik dan riwayat lokal), manifest.json (PWA), sw.js (cache offline), icon.svg.
 
-## Update GitHub Pages melalui Android
+## Update via Android
 1. Ekstrak ZIP.
-2. Buka repository `BATTERY-CHARGER-PROJECT`.
-3. Masuk tab Code.
-4. Pilih Add file > Upload files.
-5. Unggah ke root repository: `index.html`, `manifest.json`, `sw.js`, `icon.svg`.
-6. Jika nama file sudah ada, unggah versi baru dengan nama yang sama dan konfirmasi replace/commit.
-7. Tekan Commit changes.
-8. Buka Settings > Pages. Pastikan source tetap Deploy from a branch, branch `main`, folder `/(root)`.
-9. Tunggu GitHub Pages selesai deploy, lalu buka alamat website dan refresh.
+2. Buka repository BATTERY-CHARGER-PROJECT.
+3. Code > Add file > Upload files.
+4. Upload/replace index.html, manifest.json, sw.js, icon.svg di root.
+5. Commit changes. Pages tetap main / (root).
+6. Tunggu deploy lalu tutup tab/app dan buka ulang. Cache service worker menggunakan nama v3.
 
-## Catatan fitur
-Battery Status API tidak didukung semua browser. Suhu, tegangan, kapasitas mAh, dan battery health tidak tersedia melalui API browser standar. Notifikasi memerlukan izin dan browser/perangkat dapat membatasi notifikasi ketika halaman tertutup. PWA memerlukan HTTPS (GitHub Pages sudah HTTPS).
+## Batasan
+Battery Status API tidak didukung semua browser. Suhu, voltase, kapasitas mAh dan kesehatan baterai tidak tersedia lewat API web standar. Alarm dan grafik berjalan saat halaman aktif; alarm ketika aplikasi ditutup tidak dijamin. Riwayat lokal hanya merekam sampel berkala selama website dipakai pada browser ini. Notifikasi memerlukan izin. Website tidak mengubah kecepatan atau menghentikan pengisian fisik.
